@@ -1,0 +1,55 @@
+import com.sun.jdi.IntegerValue
+import java.util.*
+
+fun main() {
+    val read = Scanner(System.`in`)
+    println("=====>LAPORAN PENGGAJIAN<=====")
+
+    val SKSwajib = 6
+    val gajiPerSKS = 28000
+    val gajiPerngajar = 16000
+    val DPA = 5000
+    val infaq = 0.05
+
+    print("Matkul 1 : ")
+    val matkl1 = Integer.valueOf(readLine())
+
+    print("Matkul 2 : ")
+    val matkl2 = Integer.valueOf(readLine())
+
+    print("Jumlah kelas matkul 1: ")
+    val Jkelas1 = Integer.valueOf(readLine())
+
+    print("Jumlah kelas matkul 2: ")
+    val Jkelas2 = Integer.valueOf(readLine())
+
+    print("Jumlah pertemuan : ")
+    val Jpertemuan = Integer.valueOf(readLine())
+
+    print("Jumlah Mahasiswa : ")
+    val Jmahasiswa = Integer.valueOf(readLine())
+    
+    println("===========>JAWABAN<===========")
+
+    val totalKelas = Jkelas1 + Jkelas2
+
+    val Jsks = (matkl1 * Jkelas1) + (matkl2 * Jkelas2) - SKSwajib
+    println("Jumlah SKS anda: " + Jsks)
+
+    val nomor1 = (Jsks * gajiPerSKS)
+    println("Gaji PerSKS : " + nomor1)
+
+    val nomor2 = Jsks.toDouble() / totalKelas * gajiPerngajar  * Jpertemuan
+    println("Gaji Perngajar : " + nomor2)
+
+    val nomor3 = Jmahasiswa * DPA
+    println("Gaji menajadi DPA : " + nomor3)
+
+    val nomor4 = nomor1 + nomor2 + nomor3
+    println(" gaji kotor : "+nomor4)
+
+    val nomor5 = nomor4 - infaq
+    println("gaji bersih :" + nomor5)
+
+}
+
